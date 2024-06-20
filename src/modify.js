@@ -13,8 +13,22 @@ const getMainHeadingText = () => {
 //   console.log(document.querySelector("#main-heading").textContent); //reading h1 and logging text content in one line
 // };
 
+//QUESTION 2: READ operation- grab all the els with the class .main-text and iterate through them to build a new str value; new str value should be each individual el's text contents, separated only by commas, no spaces! log that new str to the console
 const getAllMainText = () => {
+  const mainTxt = document.querySelectorAll(".main-text"); //grabbing all the els with the class .main-text
+  const textStrs = []; //initializing a new arr with a const reference
+  mainTxt.forEach(el => textStrs.push(el.textContent)); //iterating over the nodelist pushing each class els text content to the new arr; could also do a for..of loop instead of forEach() --> for (const el of document.querySelectorAll(".main-text"))
+  console.log(textStrs.join(',')); //invoking .join() method on the new arr to log the new str separated only by commas
 };
+
+// //alt solution: iterating over NodeList by chaining document obj instead- noting that this solution is less preferred than second due to best practice of making code explicit and reusable
+// const getAllMainText = () => {
+//   const textStrs = [];
+//   document //chaining the document obj for readability
+//     .querySelectorAll(".main-text") //semicolon at the end does not belong here because we're chaining the statement not closing it
+//     .forEach(el => textStrs.push(el.textContent));
+//   console.log(textStrs.join(','));
+// };
 
 const setSubtitleText = () => {
 };
