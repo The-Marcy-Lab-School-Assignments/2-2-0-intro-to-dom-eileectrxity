@@ -4,7 +4,7 @@
 const getMainHeadingText = () => {
   const heading = document.querySelector("#main-heading"); //querySelecture returns an obj, a NodeList, that contains only the very first el that matches its css selector- in this case, the id 'main-heading'
   if (heading) { //guard clause- best practice to do so in case el is not found
-    console.log(heading.textContent); //logging the text content of heading to console; return is not necessary here
+    console.log(heading.textContent); //logging the text content of heading to the console; return is not necessary here
   } else console.log("Element with ID 'main-heading' not found"); //logging error msg to the console in case el is not found
 };
 
@@ -79,9 +79,19 @@ const removeOldInfo = () => {
   document.getElementById("old-info").remove();
 };
 
+//QUESTION 7: CRUD operations- read from the data attribute using JS to get the num of letters we want to add, then, using our "create > modify > add" pattern from q5, loop through and add lis with text content like "A is letter #1 in the alphabet". no need to put ids or classes on the lis and the lis must be children of the #alphabet ul tag
 const makeAlphabet = () => {
+  const alphabetData = document.getElementById("alphabet"); //grabbing the list el by its id attribute name
+  const numOfLetters = Number(alphabetData.dataset.numLetters); //gets the value of the key property, numLetters from the dataset with the id 'alphabet'
+  // console.log(typeof numOfLetters); //returns a str as data attributes are always returned as strs, regardless of their content; technically, it doesn't break our code when used for the looping condition as JS does type coercion- however, best practice to convert it to num anyway
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //initializing a const ref to the alphabet letters for the iteration below
+  for (let i = 0; i < numOfLetters; i++) { //running a for loop a total of numOfLetters times
+    const li = document.createElement('li'); //creating a list node item for each iteration of the loop
+    li.textContent = `${alphabet[i]} is letter #${i + 1} in the alphabet`; //setting the text content of each newly created li with string interpolation, accessing each alphabet letter with its corresponding index in the iteration
+    alphabetData.appendChild(li); //appending each li as a child node el in the alphabet dataset list
+    // console.log(alphabetData); //to help me debug; logging the full alphabet dataset to the console
+  }
 };
-
 const makeBio = () => {
 };
 
