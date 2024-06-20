@@ -40,7 +40,12 @@ const setSubtitleText = () => {
   // document.getElementById("subtitle").textContent = "This is a subtitle!"; //no # needed with this method as already getting the id by name. noting that innerText also works when logging to the console but doesn't pass the jest test
 // };
 
+//QUESTION 4: UPDATE operation- edit out the #modify-classes div that has 2 classes on it and remove bad-class then add new-class; this means there will still be 2 classes inside when you're done. classList allows us to edit only the class names we need to, without touching the rest
 const modifyDivClassList = () => {
+  const divClasses = document.getElementById("modify-classes").classList; //storing the classList of the el in a const reference; could also do querySelector("#modify-classes"")
+  divClasses.remove("bad-class"); //removing class from list by name "bad-class"
+  divClasses.add("new-class"); //adding new class to the id
+  console.log(divClasses); //to help me debug; checking if the classList has been updated as desired
 };
 
 const addH2 = () => {
