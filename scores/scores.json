@@ -44,16 +44,16 @@
       "MoTe9": 1
     },
     "From Scratch Tests": {
-      "FrScTe1": 0,
-      "FrScTe2": 0,
-      "FrScTe3": 0,
+      "FrScTe1": 1,
+      "FrScTe2": 1,
+      "FrScTe3": 1,
       "FrScTe4": 0,
       "FrScTe5": 0
     }
   },
   "humanReadable": {
     "Modify Tests": "9/9",
-    "finalTestScore": "FINAL SCORE: 9/14",
-    "From Scratch Tests": "0/5"
+    "finalTestScore": "FINAL SCORE: 12/14",
+    "From Scratch Tests": "3/5"
   }
 }
