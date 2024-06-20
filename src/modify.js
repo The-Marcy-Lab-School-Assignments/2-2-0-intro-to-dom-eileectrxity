@@ -60,7 +60,7 @@ const addH2 = () => {
 
 // //alt solution 1: using just innerHTML to create the new el with an id attribute and text content
 // const addH2 = () => {
-//   document.body.innerHTML += '<h2 id="h2-test">Another one!</h2>' //adding the full html markup directly in the document body
+  // document.body.innerHTML += '<h2 id="h2-test">Another one!</h2>' //adding the full html markup directly in the document body where += just means to append the code to the dom
 // };
 
 // //alt solution 2: creating and appending a h2 el to the end of the document body with Object.assign(target, source) where we modified the target or destinationObj, h2, with the contents of the source, a sourceObj containing id and textContent properties
@@ -92,7 +92,18 @@ const makeAlphabet = () => {
     // console.log(alphabetData); //to help me debug; logging the full alphabet dataset to the console
   }
 };
+
+//QUESTION 8: UPDATE operation- func should set the inner html of the #my-bio div to be exactly the html markup provided
 const makeBio = () => {
+  document.getElementById("my-bio").innerHTML += `
+  <h2 id="bio-heading">About Me</h2>
+  <p>My name is Zo and I like learn cool new things</p>
+  <h3 id="hobby-heading">My Hobbies</h3>
+  <ul>
+    <li>Running</li>
+    <li>Reading</li>
+    <li>Writing</li>
+  </ul>` //need to separate each html line by commas or use backticks, ``, instead of single quotes, '' as .innerHTML prefers everything in the same line
 };
 
 // "runner" function
