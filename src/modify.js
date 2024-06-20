@@ -74,7 +74,9 @@ const addH2 = () => {
 //   )
 // };
 
+//QUESTION 6: DELETE operation- grab the old p tag by its id old-info, then remove it
 const removeOldInfo = () => {
+  document.getElementById("old-info").remove();
 };
 
 const makeAlphabet = () => {
