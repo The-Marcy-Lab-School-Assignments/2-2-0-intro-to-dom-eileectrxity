@@ -25,13 +25,20 @@ const getAllMainText = () => {
 // const getAllMainText = () => {
 //   const textStrs = [];
 //   document //chaining the document obj for readability
-//     .querySelectorAll(".main-text") //semicolon at the end does not belong here because we're chaining the statement not closing it
+//     .querySelectorAll(".main-text") //semicolon at the end does not belong here because we're chaining the statement, not closing it
 //     .forEach(el => textStrs.push(el.textContent));
 //   console.log(textStrs.join(','));
 // };
 
+//QUESTION 3: UPDATE operation- grab the subtitle h2 el, then update its empty txt content to a new str val
 const setSubtitleText = () => {
+  document.querySelector("#subtitle").textContent = "This is a subtitle!"; //could also use .innerHTML instead of .textContent, but not best practice in this case as it's less safe security-wise, and we're not setting any html markup formatting
 };
+
+// //alt solution: using .getElementByID() method instead to get the first el that matches the id- this is the better solution as .getElementByID is specifically optimized for this task so it's faster, directly accessing the el by id. whereas with querySelector, the browser would first need to evaluate the selector against the entire document by parsing the selector then traversing the entire document requiring addt'l computational effort. however, this performance consideration is negligible unless working with really large documents or performance-critical apps
+// const setSubtitleText = () => {
+  // document.getElementById("subtitle").textContent = "This is a subtitle!"; //no # needed with this method as already getting the id by name. noting that innerText also works when logging to the console but doesn't pass the jest test
+// };
 
 const modifyDivClassList = () => {
 };
